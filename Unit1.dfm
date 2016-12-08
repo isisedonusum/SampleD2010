@@ -19,13 +19,15 @@ object Form1: TForm1
     Top = 0
     Width = 635
     Height = 299
-    ActivePage = TabSheet1
+    ActivePage = TabSheet2
     Align = alClient
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = 'Bilgiler'
       ExplicitLeft = 0
-      ExplicitTop = 16
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Label1: TLabel
         Left = 208
         Top = 72
@@ -106,6 +108,15 @@ object Form1: TForm1
         Align = alBottom
         Anchors = [akLeft, akTop, akRight, akBottom]
         TabOrder = 2
+      end
+      object Button2: TButton
+        Left = 549
+        Top = 98
+        Width = 75
+        Height = 25
+        Caption = 'Toplu '#304'ndir'
+        TabOrder = 3
+        OnClick = Button2Click
       end
     end
   end
