@@ -19,15 +19,11 @@ object Form1: TForm1
     Top = 0
     Width = 635
     Height = 299
-    ActivePage = TabSheet2
+    ActivePage = TabSheet3
     Align = alClient
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = 'Bilgiler'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label1: TLabel
         Left = 208
         Top = 72
@@ -119,5 +115,31 @@ object Form1: TForm1
         OnClick = Button2Click
       end
     end
+    object TabSheet3: TTabSheet
+      Caption = 'G'#246'nder'
+      ImageIndex = 2
+      object Button3: TButton
+        Left = 280
+        Top = 56
+        Width = 75
+        Height = 25
+        Caption = 'Button3'
+        TabOrder = 0
+        OnClick = Button3Click
+      end
+      object Memo3: TMemo
+        Left = 0
+        Top = 129
+        Width = 627
+        Height = 142
+        Align = alBottom
+        Anchors = [akLeft, akTop, akRight, akBottom]
+        TabOrder = 1
+      end
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    Left = 152
+    Top = 32
   end
 end
