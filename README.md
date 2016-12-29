@@ -1,7 +1,9 @@
 # SampleD2010
-Delphi 10 için örnek e-fatura/e-arşiv uygulaması
-####UBL-TR Dokümanları
-http://www.efatura.gov.tr/dosyalar/kilavuzlar/UBLTR_1.2.1_Kilavuzlar.zip<br/>
+Delphi 2010 için örnek e-fatura/e-arşiv uygulaması
+####UBL-TR dokümanları
+http://www.efatura.gov.tr/dosyalar/kilavuzlar/UBLTR_1.2.1_Kilavuzlar.zip
+####UBL-TR şema/şematron kontrol
+http://mkysoft.com/ubltr/
 ####Uyarılar
 wsdlimp.exe'deki bug nedeniyle servisleri -Ok parametresi ile oluşturunuz.
 
