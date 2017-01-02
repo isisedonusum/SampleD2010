@@ -7,7 +7,8 @@ uses
   ReportInvoiceList in 'ReportInvoiceList.pas',
   TaxPayerQuery in 'TaxPayerQuery.pas',
   Contracts in 'Contracts.pas',
-  UblTr in 'UblTr.pas';
+  UblTr in 'UblTr.pas',
+  tr.com.isisbilisim.types in 'tr.com.isisbilisim.types.pas';
 
 {$R *.res}
 

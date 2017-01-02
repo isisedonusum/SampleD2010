@@ -3,8 +3,8 @@ unit UblTr;
 interface
 
 uses
-  Contracts, Xml.XMLIntf, Xml.XMLDoc, System.SysUtils, System.TypInfo,
-  System.Classes, EncdDecd;
+  Contracts, XMLIntf, XMLDoc, SysUtils, TypInfo,
+  Classes, EncdDecd;
 
 const
   PR_cbc = 'cbc';

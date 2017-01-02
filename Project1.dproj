@@ -51,6 +51,9 @@
 			<DCCReference Include="TaxPayerQuery.pas"/>
 			<DCCReference Include="Contracts.pas"/>
 			<DCCReference Include="UblTr.pas"/>
+			<DCCReference Include="tr.com.isisbilisim.types.pas"/>
+			<None Include="base.xml"/>
+			<None Include="GeneralWithCss.xslt"/>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>
