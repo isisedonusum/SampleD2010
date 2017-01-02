@@ -26,10 +26,13 @@ type
     Button3: TButton;
     Memo3: TMemo;
     OpenDialog1: TOpenDialog;
+    TabSheet4: TTabSheet;
+    Button4: TButton;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure HTTPRIOHTTPWebNode1BeforePost(const HTTPReqResp: THTTPReqResp; Data: Pointer);
     procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -42,7 +45,7 @@ var
 implementation
 
 uses
-  TaxPayerQuery, EInvoiceEasy, EncdDecd;
+  TaxPayerQuery, EInvoiceEasy, EncdDecd, UblTr, Contracts;
 
 {$R *.dfm}
 
@@ -153,6 +156,59 @@ begin
        MessageDlg(E.Message, mtError, [mbOk], 0);
     end;
   end;
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);
+var
+  fatura: TFatura;
+  kalem: TKalem;
+  vergi: TVergi;
+begin
+  fatura := TFatura.Create;
+  fatura.Tarih := Date;
+  fatura.Senaryo := TEMELFATURA;
+  fatura.Tipi := SATIS;
+  fatura.BelgePB := 'TRY';
+
+  //fatura görseli
+  fatura.Gorsel := 'GeneralWithCss.xslt';
+
+  // Alýcý
+  fatura.Alici := TMuhatap.Create;
+  fatura.Alici.WebURI := 'http://www.isisbilisim.com.tr';
+  fatura.Alici.VKNTCKN := '46603924300';
+  fatura.Alici.Unvan := 'ISIS Biliþim Teknolojileri';
+  fatura.Alici.Ilce := 'Ataþehir';
+  fatura.Alici.Il := 'Ýstanbul';
+  fatura.Alici.Ulke := 'Türkiye';
+  fatura.Alici.UlkeKodu := 'TR';
+  fatura.Alici.VergiDairesi := 'Ýlyasbey';
+
+  // fatura kalemleri
+  fatura.Kalemler := TKalemler.Create;
+  kalem := TKalem.Create;
+  kalem.KalemNo := 1; // kalem numarasý 1'den baþlar
+  kalem.UrunKodu := '001';
+  kalem.UrunAdi := 'e-Fatura';
+  kalem.Miktar := 5;
+  kalem.OlcuBirimi := TOlcuBirimleri.C62;
+  kalem.BirimFiyat := 21;
+  kalem.IndirimTutar := 5;
+  kalem.KalemTutar := 100;
+  kalem.Vergiler := TVergiler.Create;
+  //vergi
+  vergi :=  TVergi.Create('0015', 'KDV');
+  vergi.Oran := 8;
+  kalem.Vergiler.Add(vergi);
+
+  fatura.Kalemler.Add(kalem);
+  //baþlýk vergileri manuel de atanabilir
+  fatura.BaslikVergileriHesapla;
+
+  CreateUblTr(fatura);
+
+  OpenDialog1.InitialDir := ExtractFilePath(Application.ExeName);
+  OpenDialog1.FileName := 'sample.xml';
 end;
 
 procedure TForm1.HTTPRIOHTTPWebNode1BeforePost(const HTTPReqResp: THTTPReqResp; Data: Pointer);

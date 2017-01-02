@@ -5,7 +5,9 @@ uses
   Unit1 in 'Unit1.pas' {Form1},
   EInvoiceEasy in 'EInvoiceEasy.pas',
   ReportInvoiceList in 'ReportInvoiceList.pas',
-  TaxPayerQuery in 'TaxPayerQuery.pas';
+  TaxPayerQuery in 'TaxPayerQuery.pas',
+  Contracts in 'Contracts.pas',
+  UblTr in 'UblTr.pas';
 
 {$R *.res}
 

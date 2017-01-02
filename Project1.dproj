@@ -49,6 +49,8 @@
 			<DCCReference Include="EInvoiceEasy.pas"/>
 			<DCCReference Include="ReportInvoiceList.pas"/>
 			<DCCReference Include="TaxPayerQuery.pas"/>
+			<DCCReference Include="Contracts.pas"/>
+			<DCCReference Include="UblTr.pas"/>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>
